@@ -1,5 +1,7 @@
 package application;
 	
+import java.util.ArrayList;
+
 import dao.ClienteDAO;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -25,15 +27,28 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		Cliente cliente = new Cliente();
 		ClienteDAO clienteDAO = new ClienteDAO();
+		ArrayList<Cliente> clientes = new ArrayList<>();
 		
-		cliente.setNomeCliente("Amanda Costa");
-		cliente.setCpfCliente("43236598541");
-		cliente.setDataNasc("2005-05-11");
-		cliente.setTelefone("63993894110");
-		cliente.setEndereco("rua alamedas, numero 73");
-		cliente.setEmail("amanda@gmail.com");
+		clientes = clienteDAO.read();
 		
-		clienteDAO.create(cliente);
+		for(int i = 0; i < clientes.size(); i++) {
+			cliente = clientes.get(i);
+			System.out.print("||");
+			System.out.print(cliente.getIdCliente());
+			System.out.print("|");
+			System.out.print(cliente.getNomeCliente());
+			System.out.print("|");
+			System.out.print(cliente.getCpfCliente());
+			System.out.print("|");
+			System.out.print(cliente.getDataNasc());
+			System.out.print("|");
+			System.out.print(cliente.getTelefone());
+			System.out.print("|");
+			System.out.print(cliente.getEndereco());
+			System.out.print("|");
+			System.out.print(cliente.getEmail());
+			System.out.println("");
+		}
 		
 		launch(args);
 	}

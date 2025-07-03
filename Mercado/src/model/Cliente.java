@@ -1,7 +1,7 @@
 package model;
 
 public class Cliente {
-	private String idVenda;
+	private String idCliente;
 	private String nomeCliente;
 	private String cpfCliente;
 	private String dataNasc;
@@ -10,10 +10,10 @@ public class Cliente {
 	private String email;
 	
 	
-	public Cliente(String idVenda, String nomeCliente, String cpfCliente, String dataNasc, String telefone,
+	public Cliente(String idCliente, String nomeCliente, String cpfCliente, String dataNasc, String telefone,
 			String endereco, String email) {
 		super();
-		this.idVenda = idVenda;
+		this.idCliente = idCliente;
 		this.nomeCliente = nomeCliente;
 		this.cpfCliente = cpfCliente;
 		this.dataNasc = dataNasc;
@@ -24,11 +24,11 @@ public class Cliente {
 	public Cliente() {
 		super();
 	}
-	public String getIdVenda() {
-		return idVenda;
+	public String getIdCliente() {
+		return idCliente;
 	}
-	public void setIdVenda(String idVenda) {
-		this.idVenda = idVenda;
+	public void setIdCliente(String idVenda) {
+		this.idCliente = idVenda;
 	}
 	public String getNomeCliente() {
 		return nomeCliente;
